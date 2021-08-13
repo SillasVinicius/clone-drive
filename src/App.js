@@ -1,23 +1,56 @@
-import logo from './logo.svg';
+
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { auth, provider } from './firebase';
+import Home from './Home';
+import Login from './Login';
 
 function App() {
+  const [login, setLogin] = useState(null);
+
+  useEffect(() => {
+    //Sistema de Login Persistente
+    auth.onAuthStateChanged((value) => {
+      setLogin(value.email);
+    });
+  }, []);
+
+  function handleLogin(e) {
+    e.preventDefault();
+    auth.signInWithPopup(provider)
+    .then(function(result) {
+      if(result) {
+        setLogin(result.user.email);
+      }
+    })
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        (login)
+          ?
+          <Router>
+            <Switch>
+              <Route path="/home">
+                <Home />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </Router>
+          :
+          <Login onLogin={(e) => handleLogin(e)}/>
+          // <div>
+          //   <a
+          //     href="#"
+          //     // onClick={(e) => handleLogin(e)}
+          //   >
+          //     Fazer Login
+          //   </a>
+          // </div>
+      }
     </div>
   );
 }
