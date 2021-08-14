@@ -12,7 +12,11 @@ function App() {
   useEffect(() => {
     //Sistema de Login Persistente
     auth.onAuthStateChanged((value) => {
-      setLogin(value.email);
+      setLogin({
+        name: value.displayName,
+        email: value.email,
+        profileImage: value.photoURL
+      });
     });
   }, []);
 
@@ -33,10 +37,10 @@ function App() {
           <Router>
             <Switch>
               <Route path="/home">
-                <Home />
+                <Home userLogin={login}/>
               </Route>
               <Route path="/">
-                <Home />
+                <Home userLogin={login}/>
               </Route>
             </Switch>
           </Router>

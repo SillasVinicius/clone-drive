@@ -1,0 +1,143 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px;
+    border-bottom: 1px solid #ccc;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.header-logo h3 {
+    font-size: 20px;
+    padding-left: 4px;
+    font-size: 22px;
+    line-height: 24px;
+}
+
+.header-logo img {
+    max-width: 70px;
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5px;
+}
+
+.header-user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.header-pesquisa {
+    width: 55%;
+    display: flex;
+    outline: none;
+    align-items: center;
+    position: relative;
+}
+
+.header-pesquisa input[type="text"] {
+    width: 98%;
+    height: 50px;
+    padding-left: 2px;
+    border: 0;
+    outline: none;
+    background-color: rgb(240, 240, 240);
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    /* float: left; */
+}
+
+svg {
+    height: 32px;
+    fill: #555;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.FaSearch, .FaSlidersH {
+    background-color: rgb(240, 240, 240);
+}
+
+.FaSearch {
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.FaSlidersH {
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.BsGrid3X3Gap {
+    font-size: 20px;
+    margin-right: 12px;
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+
+.BsGrid3X3Gap:hover {
+    fill: #000;
+    background-color: rgb(230, 230, 230);
+}
+
+.header-option {
+    margin-right: 30px;
+}
+
+.FiCheckCircle {
+    fill: transparent;
+    color: #555;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-top: 2.5px;
+}
+
+.FiCheckCircle:hover {
+    color: #000;
+    background-color: rgb(230, 230, 230);
+}
+
+.FiHelpCircle {
+    fill: transparent;
+    color: #555;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-top: 2.5px;
+}
+
+.FiHelpCircle:hover {
+    color: #000;
+    background-color: rgb(230, 230, 230);
+}
+
+.FiSettings {
+    fill: transparent;
+    color: #555;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-top: 2.5px;
+}
+
+.FiSettings:hover {
+    color: #000;
+    background-color: rgb(230, 230, 230);
+}
+
+.header-pesquisa svg:hover {
+    fill: #000;
+    background-color: rgb(230, 230, 230);
+}
